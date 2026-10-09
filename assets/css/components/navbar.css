@@ -1,0 +1,63 @@
+@import url("../variables.css");
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-navbar-bg);
+    padding: 10px 20px;
+    border-bottom: 2px solid var(--color-border-dark);
+    min-height: 86px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    background: var(--color-logo-bg);
+    border: 1px solid var(--color-text-muted);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.logo-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-text-main);
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--color-badge-bg);
+    color: var(--color-primary-bg);
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-weight: bold;
+}

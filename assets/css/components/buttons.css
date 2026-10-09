@@ -1,0 +1,12 @@
+@import url("../variables.css");
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid var(--color-text-muted);
+    transition: background 0.2s;
+}

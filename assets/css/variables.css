@@ -1,0 +1,17 @@
+:root {
+    --color-primary-bg: #ffffff;
+    --color-text-main: #111111;
+    --color-text-muted: #555555;
+    --color-border-light: #cccccc;
+    --color-border-dark: #555555;
+    --color-navbar-bg: #a89bc9;
+    --color-logo-bg: #c2b5e0;
+    --color-btn-cart: #b1cc9b;
+    --color-btn-cart-hover: #9fbc87;
+    --color-btn-buy: #a3bc8c;
+    --color-btn-buy-hover: #92ab7c;
+    --color-border-active: #2e7d32;
+    --color-size-active-bg: #f1f8e9;
+    --color-badge-bg: #d9534f;
+    --color-specs-border: #e0e0e0;
+}

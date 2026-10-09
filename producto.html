@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierra Outdoor - Chamarra Impermeable</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/search.css">
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/pages/producto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <main class="product-container">
+        <div class="product-gallery">
+            <div class="main-image-box">
+                <img id="active-product-img" src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="Chamarra Impermeable Mujer">
+            </div>
+        </div>
+        <div class="product-details">
+            <h1 class="product-title">Chamarra Impermeable Mujer, Transpirable con Capucha, Abrigo Ligero para Lluvia, Senderismo y Actividades al Aire Libre</h1>
+            <div class="product-price" id="product-price">$412</div>
+            <div class="option-group">
+                <span class="option-label">Color: <strong id="selected-color-name">Blanco</strong></span>
+                <div class="color-options">
+                    <button class="color-btn active" data-color="Blanco" data-price="$412" data-img="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80">
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=100&q=80" alt="Blanco">
+                        <span class="opt-name">Blanco</span>
+                        <span class="opt-price">$412</span>
+                    </button>
+                    <button class="color-btn" data-color="Negro" data-price="$458" data-img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80">
+                        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=100&q=80" alt="Negro">
+                        <span class="opt-name">Negro</span>
+                        <span class="opt-price">$458</span>
+                    </button>
+                    <button class="color-btn" data-color="Rosa" data-price="$412" data-img="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=600&q=80">
+                        <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=100&q=80" alt="Rosa">
+                        <span class="opt-name">Rosa</span>
+                        <span class="opt-price">$412</span>
+                    </button>
+                </div>
+            </div>
+            <div class="option-group">
+                <span class="option-label">Talla: <strong id="selected-size-name">CH</strong></span>
+                <div class="size-options">
+                    <button class="size-btn" data-size="M">M</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                    <button class="size-btn" data-size="2XL">2XL</button>
+                    <button class="size-btn" data-size="3XL">3XL</button>
+                    <button class="size-btn active" data-size="CH">CH</button>
+                    <button class="size-btn" data-size="G">G</button>
+                </div>
+            </div>
+            <div class="specs-section">
+                <h2>Detalles de producto</h2>
+                
+                <div class="spec-row">
+                    <span class="spec-key">Marca</span>
+                    <span class="spec-val">CUBIC PLANET</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Descripción del rango de edad</span>
+                    <span class="spec-val">Adulto</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Clasificación</span>
+                    <span class="spec-val">Ropa y calzado</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Tipo de tejido</span>
+                    <span class="spec-val">Poliéster</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Instrucciones de cuidado del material</span>
+                    <span class="spec-val">Lavado a mano</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">País de origen</span>
+                    <span class="spec-val">China</span>
+                </div>
+                <h3 class="specs-subtitle">Estilo</h3>
+                <div class="spec-row">
+                    <span class="spec-key">Color</span>
+                    <span class="spec-val" id="spec-color-val">Blanco</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Estilo</span>
+                    <span class="spec-val">Chaquetón</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Tipo de manga</span>
+                    <span class="spec-val">Manga larga</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Tipo de silueta del abrigo</span>
+                    <span class="spec-val">Impermeable</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Temporadas</span>
+                    <span class="spec-val">Invierno, Primavera, Otoño</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Patrón</span>
+                    <span class="spec-val">Sólido</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-key">Tipo de corte</span>
+                    <span class="spec-val">Regular</span>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-cart" id="btn-add-cart">Agregar al carrito</button>
+                <button class="btn btn-buy" id="btn-buy-now">Comprar ahora</button>
+            </div>
+        </div>
+    </main>
+    <script type="module">
+        import { cargarNavbar } from "./assets/js/components/navbar.js";
+        cargarNavbar();
+    </script>
+    <script type="module" src="./assets/js/pages/producto.js"></script>
+</body>
+</html>
