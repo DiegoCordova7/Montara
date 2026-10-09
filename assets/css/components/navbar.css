@@ -6,14 +6,16 @@
     align-items: center;
     background-color: var(--color-navbar-bg);
     padding: 10px 20px;
-    border-bottom: 2px solid var(--color-border-dark);
     min-height: 86px;
+    border-bottom: 2px solid var(--color-border-dark);
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--color-text-main);
 }
 
 .logo-icon {
@@ -42,12 +44,21 @@
     font-size: 12px;
     line-height: 1.2;
     font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-border-active);
 }
 
 .cart-icon {
     position: relative;
     font-size: 20px;
     cursor: pointer;
+}
+
+.cart-icon:hover {
+    color: var(--color-border-active);
 }
 
 .cart-badge {
