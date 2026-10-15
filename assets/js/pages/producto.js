@@ -1,4 +1,3 @@
-import { buscarProductoPorId } from "../data/productos.js";
 import { agregarAlCarrito, contarArticulos } from "../data/carrito.js";
 import { buscarProductoPorId, productos } from "../data/productos.js";
 
@@ -23,8 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (productTitle) productTitle.textContent = producto.nombre;
 
-    let cartCount = cartBadge ? Number(cartBadge.textContent) || 0 : 0;
-
     const coloresDisponibles = [...new Set(producto.variantes.map(v => v.color))];
     const tallasDisponibles = [...new Set(producto.variantes.map(v => v.talla))];
 
@@ -32,7 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let tallaSeleccionada = tallasDisponibles.includes("CH") ? "CH" : (tallasDisponibles[0] || "M");
     let varianteSeleccionada = null;
 
-    cartBadge.textContent = contarArticulos();
+    if (cartBadge) {
+        cartBadge.textContent = contarArticulos();
+    }
 
     function buscarVariante(color, talla) {
         return producto.variantes.find(variante =>
@@ -204,39 +203,27 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnAddCart) {
         btnAddCart.addEventListener("click", () => {
             if (!varianteSeleccionada?.estaDisponible()) return;
-            cartCount++;
-            if (cartBadge) cartBadge.textContent = cartCount;
-            alert(`¡Producto agregado al carrito!\n${producto.nombre} - ${varianteSeleccionada.color} (${varianteSeleccionada.talla})`);
+
+            const agregado = agregarAlCarrito(producto.id, varianteSeleccionada.id);
+
+            if (!agregado) {
+                alert("Ya tienes en el carrito todo el stock disponible de esta variante.");
+                return;
+            }
+
+            if (cartBadge) {
+                cartBadge.textContent = contarArticulos();
+            }
+
+            alert(`¡Producto agregado al carrito!\n${producto.nombre}\nColor: ${varianteSeleccionada.color}\nTalla: ${varianteSeleccionada.talla}\nPrecio: $${varianteSeleccionada.precio}`);
         });
     }
 
     if (btnBuyNow) {
         btnBuyNow.addEventListener("click", () => {
             if (!varianteSeleccionada?.estaDisponible()) return;
-            alert(`Redirigiendo al pago de ${producto.nombre}...`);
+            alert(`Redirigiendo al proceso de pago:\n${producto.nombre}\nColor: ${varianteSeleccionada.color}\nTalla: ${varianteSeleccionada.talla}\nPrecio: $${varianteSeleccionada.precio}`);
         });
-    });
-
-    btnAddCart.addEventListener("click", () => {
-        if (!varianteSeleccionada?.estaDisponible()) return;
-
-        const agregado = agregarAlCarrito(producto.id, varianteSeleccionada.id);
-
-        if (!agregado) {
-            alert("Ya tienes en el carrito todo el stock disponible de esta variante.");
-            return;
-        }
-
-        cartBadge.textContent = contarArticulos();
-
-        alert(`¡Producto agregado al carrito!\n${producto.nombre}\nColor: ${varianteSeleccionada.color}\nTalla: ${varianteSeleccionada.talla}\nPrecio: $${varianteSeleccionada.precio}`);
-    });
-
-    btnBuyNow.addEventListener("click", () => {
-        if (!varianteSeleccionada?.estaDisponible()) return;
-
-        alert(`Redirigiendo al proceso de pago:\n${producto.nombre}\nColor: ${varianteSeleccionada.color}\nTalla: ${varianteSeleccionada.talla}\nPrecio: $${varianteSeleccionada.precio}`);
-    });
     }
 
     renderizarColores();
