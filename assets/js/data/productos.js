@@ -37,24 +37,24 @@ export const productos = [
       corte: "Regular"
     },
     variantes: ["Blanco", "Negro", "Rosa"].flatMap(color =>
-        ["M", "XL", "2XL", "3XL", "CH", "G"].map(talla => {
-            const imagenes = {
-                Blanco: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80",
-                Negro: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80",
-                Rosa: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=600&q=80"
-            };
-            const precio = color === "Negro" ? 458 : 412;
-            return new VarianteProducto({
-                id: `101-${color.toLowerCase()}-${talla.toLowerCase()}`,
-                color,
-                talla,
-                precio,
-                stock: 5,
-                imagen: imagenes[color]
-            });
-        })
+      ["M", "XL", "2XL", "3XL", "CH", "G"].map(talla => {
+        const imagenes = {
+          Blanco: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80",
+          Negro: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80",
+          Rosa: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=600&q=80"
+        };
+        const precio = color === "Negro" ? 458 : 412;
+        return new VarianteProducto({
+          id: `101-${color.toLowerCase()}-${talla.toLowerCase()}`,
+          color,
+          talla,
+          precio,
+          stock: 5,
+          imagen: imagenes[color]
+        });
+      })
     )
-  })/*,
+  }),
 
   new Producto({
     id: 102,
@@ -124,7 +124,7 @@ export const productos = [
         stock: 12
       })
     ]
-  })*/
+  })
 ];
 
 export function buscarProductoPorId(id) {
