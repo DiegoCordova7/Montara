@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montara - Carrito</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/search.css">
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/pages/carrito.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <main class="cart-container">
+        <h1 class="cart-title">Carrito de compras</h1>
+
+        <div class="cart-layout">
+            <section class="cart-items-section">
+                <div id="cart-items"></div>
+
+                <div id="cart-empty" class="cart-empty" hidden>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>Tu carrito está vacío.</p>
+                    <a href="producto.html" class="btn btn-cart">Ver productos</a>
+                </div>
+            </section>
+
+            <aside id="cart-summary" class="cart-summary" hidden>
+                <h2>Resumen del pedido</h2>
+
+                <div class="summary-row">
+                    <span>Artículos</span>
+                    <span id="cart-count">0</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total</span>
+                    <span id="cart-total">$0</span>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-buy" id="btn-checkout">Proceder al pago</button>
+                    <button class="btn btn-cart" id="btn-clear-cart">Vaciar carrito</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <script type="module">
+        import { cargarNavbar } from "./assets/js/components/navbar.js";
+        cargarNavbar();
+    </script>
+    <script type="module" src="./assets/js/pages/carrito.js"></script>
+</body>
+
+</html>

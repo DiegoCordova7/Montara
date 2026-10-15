@@ -1,4 +1,5 @@
 import { buscarProductoPorId } from "../data/productos.js";
+import { agregarAlCarrito, contarArticulos } from "../data/carrito.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const producto = buscarProductoPorId(101);
@@ -18,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let colorSeleccionado = document.querySelector(".color-btn.active")?.dataset.color ?? "Blanco";
     let tallaSeleccionada = document.querySelector(".size-btn.active")?.dataset.size ?? "CH";
     let varianteSeleccionada = null;
-    let cartCount = Number(cartBadge.textContent) || 0;
+
+    cartBadge.textContent = contarArticulos();
 
     function buscarVariante(color, talla) {
         return producto.variantes.find(variante =>
@@ -78,8 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
     btnAddCart.addEventListener("click", () => {
         if (!varianteSeleccionada?.estaDisponible()) return;
 
-        cartCount++;
-        cartBadge.textContent = cartCount;
+        const agregado = agregarAlCarrito(producto.id, varianteSeleccionada.id);
+
+        if (!agregado) {
+            alert("Ya tienes en el carrito todo el stock disponible de esta variante.");
+            return;
+        }
+
+        cartBadge.textContent = contarArticulos();
 
         alert(`¡Producto agregado al carrito!\n${producto.nombre}\nColor: ${varianteSeleccionada.color}\nTalla: ${varianteSeleccionada.talla}\nPrecio: $${varianteSeleccionada.precio}`);
     });
