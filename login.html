@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montara - Iniciar sesión</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/search.css">
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/pages/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <main class="login-container">
+        <section class="login-card">
+            <h1 class="login-title">Iniciar sesión</h1>
+
+            <form id="login-form" novalidate>
+                <div class="form-group">
+                    <label class="option-label" for="login-email">Correo electrónico</label>
+                    <input class="form-input" type="email" id="login-email" name="correo" autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="option-label" for="login-password">Contraseña</label>
+                    <div class="password-box">
+                        <input class="form-input" type="password" id="login-password" name="contrasena" autocomplete="current-password" required>
+                        <button type="button" class="toggle-password" id="toggle-password" aria-label="Mostrar contraseña">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <p class="login-error" id="login-error" role="alert" hidden></p>
+
+                <button type="submit" class="btn btn-buy" id="btn-login">Entrar</button>
+            </form>
+
+            <p class="login-footer">¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+
+            <p class="login-demo">Cuenta de prueba: cliente@montara.com / Montara123</p>
+        </section>
+    </main>
+    <script type="module">
+        import { cargarNavbar } from "./assets/js/components/navbar.js";
+        cargarNavbar();
+    </script>
+    <script type="module" src="./assets/js/pages/login.js"></script>
+</body>
+
+</html>

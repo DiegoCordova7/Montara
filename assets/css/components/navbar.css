@@ -1,5 +1,10 @@
 @import url("../variables.css");
 
+.site-header {
+    background-color: var(--color-navbar-bg);
+    border-bottom: 2px solid var(--color-border-dark);
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -8,6 +13,10 @@
     padding: 10px 20px;
     min-height: 86px;
     border-bottom: 2px solid var(--color-border-dark);
+}
+
+.site-header .navbar {
+    border-bottom: none;
 }
 
 .logo-container {
@@ -71,4 +80,105 @@
     padding: 2px 5px;
     border-radius: 50%;
     font-weight: bold;
+}
+
+/* Barra de categorías */
+.category-bar {
+    width: 100%;
+    padding: 0 0 10px;
+}
+
+.category-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.category-item {
+    position: relative;
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.category-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    color: var(--color-text-main);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.category-link i {
+    font-size: 10px;
+}
+
+.category-link:hover {
+    color: var(--color-border-active);
+}
+
+.category-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    list-style: none;
+    background: var(--color-primary-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: 4px;
+    padding: 6px 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: left;
+}
+
+/* El último menú se abre hacia la izquierda para no salirse de la pantalla */
+.category-item:last-child .category-menu {
+    left: auto;
+    right: 0;
+}
+
+.has-menu:hover .category-menu,
+.has-menu:focus-within .category-menu {
+    display: block;
+}
+
+.category-menu a {
+    display: block;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: var(--color-text-main);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.category-menu a:hover {
+    background: var(--color-size-active-bg);
+}
+
+@media (max-width: 768px) {
+    .category-item {
+        flex: 1 1 33%;
+    }
+
+    .category-link {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-item {
+        flex: 1 1 50%;
+    }
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montara - Catálogo</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/search.css">
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/pages/catalogo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <main class="catalog-container">
+        <h1 class="catalog-title">Catálogo de productos</h1>
+        <p class="catalog-subtitle" id="catalog-subtitle"></p>
+
+        <div class="catalog-layout">
+            <aside class="catalog-filters">
+                <h2>Categorías</h2>
+                <div id="category-filters"></div>
+            </aside>
+
+            <section class="catalog-main">
+                <div class="catalog-toolbar">
+                    <span id="catalog-count">0 productos</span>
+                    <div class="sort-group">
+                        <label for="sort-select" class="option-label">Ordenar por:</label>
+                        <select id="sort-select" class="sort-select">
+                            <option value="relevancia">Relevancia</option>
+                            <option value="precio-asc">Precio: menor a mayor</option>
+                            <option value="precio-desc">Precio: mayor a menor</option>
+                            <option value="nombre">Nombre (A-Z)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="product-grid" class="product-grid"></div>
+
+                <div id="catalog-empty" class="catalog-empty" hidden>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <p>No encontramos productos con esos criterios.</p>
+                    <a href="catalogo.html" class="btn btn-cart">Ver todo el catálogo</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script type="module">
+        import { cargarNavbar } from "./assets/js/components/navbar.js";
+        cargarNavbar();
+    </script>
+    <script type="module" src="./assets/js/pages/catalogo.js"></script>
+</body>
+
+</html>

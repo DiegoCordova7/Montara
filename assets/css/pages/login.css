@@ -1,0 +1,132 @@
+[hidden] {
+    display: none !important;
+}
+
+.login-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    padding: 30px;
+    background: var(--color-primary-bg);
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-text-main);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group .option-label {
+    display: block;
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    background: var(--color-primary-bg);
+    color: var(--color-text-main);
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: var(--color-border-active);
+    box-shadow: 0 0 0 1px var(--color-border-active);
+}
+
+.form-input.invalid {
+    border-color: var(--color-badge-bg);
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box .form-input {
+    padding-right: 42px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.toggle-password:hover {
+    color: var(--color-text-main);
+}
+
+.login-error {
+    font-size: 13px;
+    color: var(--color-badge-bg);
+    margin-bottom: 15px;
+}
+
+#login-form .btn {
+    width: 100%;
+}
+
+.btn-buy {
+    background-color: var(--color-btn-buy);
+    color: var(--color-text-main);
+}
+
+.btn-buy:hover {
+    background-color: var(--color-btn-buy-hover);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.login-footer {
+    margin-top: 20px;
+    font-size: 13px;
+    text-align: center;
+    color: var(--color-text-muted);
+}
+
+.login-footer a {
+    color: var(--color-text-main);
+    font-weight: 600;
+}
+
+.login-footer a:hover {
+    color: var(--color-border-active);
+}
+
+.login-demo {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-specs-border);
+    font-size: 12px;
+    text-align: center;
+    color: var(--color-text-muted);
+}
