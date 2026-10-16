@@ -2,7 +2,8 @@ import { agregarAlCarrito, contarArticulos } from "../data/carrito.js";
 import { buscarProductoPorId, productos } from "../data/productos.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const producto = buscarProductoPorId(101);
+    const idProducto = Number(new URLSearchParams(location.search).get("id")) || 101;
+    const producto = buscarProductoPorId(idProducto);
     if (!producto) throw new Error("No se encontró el producto.");
 
     document.title = `Montara - ${producto.nombre}`;
